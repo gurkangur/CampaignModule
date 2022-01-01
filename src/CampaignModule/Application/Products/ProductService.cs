@@ -1,6 +1,6 @@
 ﻿using CampaignModule.Domain.AggregatesModel.ProductAggregate;
 
-namespace CampaignModule.Application
+namespace CampaignModule.Application.Products
 {
     public class ProductService : IProductService
     {

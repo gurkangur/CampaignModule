@@ -1,9 +1,9 @@
-﻿using CampaignModule.Application;
+﻿using CampaignModule.Application.Products;
 using CampaignModule.Domain.AggregatesModel.ProductAggregate;
 using Moq;
 using Xunit;
 
-namespace CampaignModule.UnitTests.Application
+namespace CampaignModule.UnitTests.Application.Products
 {
     public class ProductServiceTests
     {
