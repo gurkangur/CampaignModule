@@ -1,4 +1,5 @@
-﻿using CampaignModule.Application.Orders;
+﻿using CampaignModule.Application.Campaigns;
+using CampaignModule.Application.Orders;
 using CampaignModule.Application.Products;
 using CampaignModule.Domain.AggregatesModel.OrderAggregate;
 using CampaignModule.Domain.AggregatesModel.ProductAggregate;
@@ -11,11 +12,13 @@ namespace CampaignModule.UnitTests.Application
     {
         private readonly Mock<IOrderRepository> _orderRepository;
         private readonly Mock<IProductService> _productService;
+        private readonly Mock<ICampaignService> _campaignService;
 
         public OrderServiceTests()
         {
             _orderRepository = new Mock<IOrderRepository>();
             _productService = new Mock<IProductService>();
+            _campaignService = new Mock<ICampaignService>();
         }
 
         [Fact]
@@ -32,7 +35,8 @@ namespace CampaignModule.UnitTests.Application
             //Act
             var orderService = new OrderService(
                 _orderRepository.Object,
-                _productService.Object
+                _productService.Object,
+                _campaignService.Object
                 );
 
             var order = orderService.CreateOrder(fakeOrder);
